@@ -1,0 +1,5 @@
+- hosts: aws_tag_server_role=web
+  remote_user: ubuntu
+  become: true
+  roles:
+    - wordpress

@@ -1,0 +1,20 @@
+---
+# These variables will be overwrite by terraform
+# Use it for local testing with ansible only
+WEBSITE_NAME: "localwebsite"
+DB_HOSTNAME: "localhost"
+DB_NAME: "wordpress"
+DB_USERNAME: "root"
+DB_PASSWORD: ""
+
+website_name: "{{ WEBSITE_NAME }}"
+wordpress_dir: /var/www
+WORDPRESS_VERSION: "latest" # latest || 4.9.5 || check at https://wordpress.org/download/release-archive/
+wordpress_url: http://wordpress.org/wordpress-{{ WORDPRESS_VERSION }}.tar.gz
+connections: 1024 # nginx connections
+
+# database settings
+db_hostname: "{{ DB_HOSTNAME }}" 
+db_name: "{{ DB_NAME }}"
+db_username: "{{ DB_USERNAME }}"
+db_password: "{{ DB_PASSWORD }}"
